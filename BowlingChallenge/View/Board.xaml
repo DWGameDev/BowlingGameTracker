@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="BowlingChallenge.View.Board"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:view="clr-namespace:BowlingChallenge.View"
+			 xmlns:viewmodel="clr-namespace:BowlingChallenge.ViewModel"
+             mc:Ignorable="d"
+				d:DesignHeight="72">
+    <UserControl.DataContext>
+        <viewmodel:BoxViewModel x:Name="ViewModel"/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+
+        <Border Grid.Column="1">
+            <view:ScoreBox x:Name="Box1" HorizontalAlignment="Stretch" DataContext="{Binding FrameOne, Mode=OneWay}"/>
+        </Border>
+        <Border Grid.Column="2">
+            <view:ScoreBox x:Name="Box2"  DataContext="{Binding FrameTwo}"/>
+        </Border>
+        <Border Grid.Column="3">
+            <view:ScoreBox x:Name="Box3"  DataContext="{Binding FrameThree}"/>
+        </Border>
+        <Border Grid.Column="4">
+            <view:ScoreBox x:Name="Box4"  DataContext="{Binding FrameFour}"/>
+        </Border>
+        <Border Grid.Column="5">
+            <view:ScoreBox x:Name="Box5"  DataContext="{Binding FrameFive}"/>
+        </Border>
+        <Border Grid.Column="6">
+            <view:ScoreBox x:Name="Box6"  DataContext="{Binding FrameSix}"/>
+        </Border>
+        <Border Grid.Column="7">
+            <view:ScoreBox x:Name="Box7"  DataContext="{Binding FrameSeven}"/>
+        </Border>
+        <Border Grid.Column="8">
+            <view:ScoreBox x:Name="Box8"  DataContext="{Binding FrameEight}"/>
+        </Border>
+        <Border Grid.Column="9">
+            <view:ScoreBox x:Name="Box9"  DataContext="{Binding FrameNine}"/>
+        </Border>
+        <Border Grid.Column="10">
+            <view:ScoreBox x:Name="TenthFrame" Grid.Column="9" Width="72" DataContext="{Binding FrameTen}"/>
+        </Border>
+
+    </Grid>
+</UserControl>
